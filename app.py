@@ -30,7 +30,7 @@ st.image(pic, use_column_width=True)
 st.sidebar.markdown("### RATING OUT OF ★★★★★")
 rate=st.sidebar.slider("slide to see the rating in the global places ",0.0,5.0)
 st.write("rate: ",rate)
-st.write(data.query("Rating <= @rate")[["Restaurant_Name","Rating"]])
+
 st.sidebar.map(data.query("Rating <= @rate")[["lon","lat"]].dropna(how="any"))
 
 
